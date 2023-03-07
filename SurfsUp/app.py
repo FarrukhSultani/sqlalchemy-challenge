@@ -16,3 +16,11 @@ engine = create_engine("sqlite:///hawaii.sqlite")
 # Reflect database and tables
 Base = automap_base()
 Base.prepare(engine, reflect=True)
+
+# Save references to tables
+Measurement = Base.classes.measurement
+Station = Base.classes.station
+
+# Create app instance
+app = Flask(__name__)
+
